@@ -1,0 +1,23 @@
+﻿# Segredos e variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Dependências e arquivos gerados
+/vendor/
+/node_modules/
+/dist/
+/build/
+/.output/
+/coverage/
+
+# Logs
+*.log
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
