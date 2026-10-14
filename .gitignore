@@ -1,4 +1,4 @@
-﻿# Segredos e variáveis de ambiente
+# Segredos e variáveis de ambiente
 .env
 .env.*
 !.env.example
