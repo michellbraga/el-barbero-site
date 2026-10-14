@@ -35,3 +35,11 @@
 .contact__content{grid-column:2;align-self:center;padding:0}
 @media(max-width:800px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.gallery__item--service,.gallery__item--lounge{grid-column:auto}.contact{grid-template-columns:minmax(0,1fr);gap:0;padding:0 var(--page-gutter) clamp(4rem,8vw,6rem)}.contact__photo{grid-column:1/-1;width:calc(100% + 2 * var(--page-gutter));max-width:none;margin-inline:calc(-1 * var(--page-gutter));aspect-ratio:16/9}.contact__photo img{height:100%;object-fit:cover}.contact__content{grid-column:1;padding:3rem 0 0}}
 @media(max-width:520px){.gallery{grid-template-columns:minmax(0,1fr);gap:.75rem;padding-bottom:4.5rem}.gallery__item,.gallery__item--facade,.gallery__item--service,.gallery__item--chair,.gallery__item--detail,.gallery__item--lounge{grid-column:1;grid-row:auto;width:100%;height:auto}.gallery__item--service{grid-column:1}.gallery__item figcaption{right:.8rem;bottom:.8rem;left:.8rem;gap:.6rem;font-size:.62rem;letter-spacing:.12em}.contact{padding-bottom:3.5rem}.contact__photo{aspect-ratio:4/3}.contact__photo img{height:100%;object-fit:cover;object-position:center}.contact__content{padding-top:2.25rem}}
+
+/* Show the complete opening animation and use the supplied brand mark. */
+.intro__video{object-fit:contain;object-position:center;background:var(--color-black)}
+.brand{gap:0}
+.brand__logo{display:block;width:4rem;height:4rem;object-fit:contain;background:var(--color-ivory);border-radius:.2rem}
+.brand--footer .brand__logo{width:3rem;height:3rem}
+@media(max-width:800px){.brand__logo{width:3.5rem;height:3.5rem}}
+@media(max-width:480px){.brand__logo{width:3.25rem;height:3.25rem}}
