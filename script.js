@@ -59,5 +59,186 @@
     window.dispatchEvent(new CustomEvent('elbarbero:conversion', { detail }));
     if (Array.isArray(window.dataLayer)) window.dataLayer.push(detail);
   }));
+
+  const reducedMotionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const carouselStates = [];
+  const photoCarousel = document.querySelector('[data-carousel="gallery"]');
+  const lightbox = document.getElementById('photo-lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  let photoIndex = 0;
+  let returnFocusTo = null;
+  let galleryState = null;
+
+  function slidesVisible(carousel, viewport, slides) {
+    if (!slides.length) return 1;
+    return Math.max(1, viewport.clientWidth / slides[0].getBoundingClientRect().width);
+  }
+
+  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('[data-track]');
+    const viewport = carousel.querySelector('.service-track-wrap, .photo-carousel__viewport, .review-carousel__viewport');
+    const slides = Array.from(track.children);
+    const previous = carousel.querySelector('[data-prev]');
+    const next = carousel.querySelector('[data-next]');
+    const position = carousel.querySelector('[data-position]');
+    const indicators = carousel.querySelector('[data-indicators]');
+    const isGallery = carousel.dataset.carousel === 'gallery';
+    const isReviews = carousel.dataset.carousel === 'reviews';
+    if (carousel.dataset.carousel === 'services') {
+      carousel.classList.toggle('service-lane--short-1', slides.length === 1);
+      carousel.classList.toggle('service-lane--short-2', slides.length === 2);
+      carousel.classList.toggle('service-lane--short-3', slides.length === 3);
+    }
+    let index = 0;
+    let maximum = 0;
+    let rotationTimer;
+    let resumeTimer;
+    let isInView = false;
+    let isInteracting = false;
+    let touchStartX = null;
+
+    function measure() {
+      const visible = slidesVisible(carousel, viewport, slides);
+      const displayCount = carousel.dataset.carousel === 'services' && slides.length > 1
+        ? Math.min(visible, slides.length - 1)
+        : visible;
+      maximum = Math.max(0, slides.length - Math.floor(displayCount + 0.01));
+      index = Math.min(index, maximum);
+      update();
+      if (indicators) {
+        indicators.replaceChildren();
+        for (let dotIndex = 0; dotIndex <= maximum; dotIndex += 1) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.setAttribute('aria-label', isReviews ? `Mostrar conjunto de avaliações ${dotIndex + 1}` : `Mostrar conjunto de fotografias ${dotIndex + 1}`);
+          dot.addEventListener('click', () => goTo(dotIndex, true));
+          indicators.append(dot);
+        }
+      }
+      update();
+    }
+
+    function update() {
+      const first = slides[index];
+      const offset = first ? first.offsetLeft : 0;
+      track.style.transform = `translate3d(-${offset}px, 0, 0)`;
+      if (position) position.textContent = `${String(index + 1).padStart(2, '0')} / ${String(maximum + 1).padStart(2, '0')}`;
+      if (previous) previous.disabled = maximum === 0;
+      if (next) next.disabled = maximum === 0;
+      if (indicators) Array.from(indicators.children).forEach((dot, dotIndex) => {
+        dot.setAttribute('aria-current', String(dotIndex === index));
+      });
+      if (isGallery) photoIndex = index;
+    }
+
+    function pause() {
+      window.clearInterval(rotationTimer);
+      rotationTimer = undefined;
+      window.clearTimeout(resumeTimer);
+    }
+
+    function start() {
+      pause();
+      if (reducedMotionPreference.matches || !isInView || isInteracting || maximum === 0 || (isGallery && lightbox.open)) return;
+      rotationTimer = window.setInterval(() => goTo(index >= maximum ? 0 : index + 1), isGallery ? 6500 : 7800);
+    }
+
+    function goTo(target, wasManual = false) {
+      index = Math.max(0, Math.min(maximum, target));
+      update();
+      if (wasManual) {
+        pause();
+        resumeTimer = window.setTimeout(start, 4500);
+      }
+    }
+
+    previous?.addEventListener('click', () => goTo(index <= 0 ? maximum : index - 1, true));
+    next?.addEventListener('click', () => goTo(index >= maximum ? 0 : index + 1, true));
+    carousel.addEventListener('mouseenter', () => { isInteracting = true; pause(); });
+    carousel.addEventListener('mouseleave', () => { isInteracting = false; start(); });
+    carousel.addEventListener('focusin', () => { isInteracting = true; pause(); });
+    carousel.addEventListener('focusout', (event) => {
+      if (!carousel.contains(event.relatedTarget)) { isInteracting = false; start(); }
+    });
+    carousel.addEventListener('pointerdown', () => { isInteracting = true; pause(); }, { passive: true });
+    carousel.addEventListener('pointerdown', (event) => {
+      if (isReviews && event.target.closest('.review-carousel__viewport')) {
+        touchStartX = event.clientX;
+        carousel.setPointerCapture?.(event.pointerId);
+      }
+    }, { passive: true });
+    carousel.addEventListener('pointerup', () => {
+      window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(() => { isInteracting = false; start(); }, 4500);
+    }, { passive: true });
+    carousel.addEventListener('pointerup', (event) => {
+      if (!isReviews || touchStartX === null) return;
+      const delta = event.clientX - touchStartX;
+      touchStartX = null;
+      if (Math.abs(delta) > 40) goTo(index + (delta < 0 ? 1 : -1), true);
+    }, { passive: true });
+    carousel.addEventListener('pointercancel', () => { touchStartX = null; }, { passive: true });
+    carousel.addEventListener('keydown', (event) => {
+      if ((isGallery || isReviews) && (event.key === 'ArrowLeft' || event.key === 'ArrowRight')) {
+        event.preventDefault();
+        goTo(index + (event.key === 'ArrowRight' ? 1 : -1), true);
+      }
+    });
+
+    const state = { element: carousel, measure, start, pause, getIndex: () => index, goTo };
+    carouselStates.push(state);
+    if (isGallery) galleryState = state;
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(([entry]) => {
+        isInView = entry.isIntersecting;
+        if (isInView) start(); else pause();
+      }, { threshold: 0.12 });
+      observer.observe(carousel);
+    } else {
+      isInView = true;
+      start();
+    }
+    measure();
+  });
+
+  function showPhoto(index) {
+    if (!photoCarousel || !lightbox) return;
+    const photos = Array.from(photoCarousel.querySelectorAll('.photo-slide'));
+    photoIndex = (index + photos.length) % photos.length;
+    const photo = photos[photoIndex];
+    const image = photo.querySelector('img');
+    lightboxImage.src = photo.dataset.full;
+    lightboxImage.alt = image.alt;
+    lightboxCaption.textContent = photo.querySelector('span').textContent;
+    if (!lightbox.open) {
+      returnFocusTo = photo;
+      lightbox.showModal();
+      galleryState?.pause();
+    }
+  }
+
+  photoCarousel?.querySelectorAll('.photo-slide').forEach((photo, index) => {
+    photo.addEventListener('click', () => showPhoto(index));
+  });
+  document.querySelector('[data-lightbox-close]')?.addEventListener('click', () => lightbox.close());
+  document.querySelector('[data-lightbox-prev]')?.addEventListener('click', () => showPhoto(photoIndex - 1));
+  document.querySelector('[data-lightbox-next]')?.addEventListener('click', () => showPhoto(photoIndex + 1));
+  lightbox?.addEventListener('click', (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  lightbox?.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') showPhoto(photoIndex - 1);
+    if (event.key === 'ArrowRight') showPhoto(photoIndex + 1);
+  });
+  lightbox?.addEventListener('close', () => {
+    returnFocusTo?.focus();
+    galleryState?.start();
+  });
+
+  window.addEventListener('resize', () => carouselStates.forEach((state) => state.measure()));
+  reducedMotionPreference.addEventListener?.('change', () => carouselStates.forEach((state) => {
+    if (reducedMotionPreference.matches) state.pause(); else state.start();
+  }));
   document.getElementById('year').textContent = String(new Date().getFullYear());
 })();
