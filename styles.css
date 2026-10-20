@@ -39,7 +39,7 @@
 /* Show the complete opening animation and use the supplied brand mark. */
 .intro__video{object-fit:contain;object-position:center;background:var(--color-black)}
 .brand{gap:0}
-.brand__logo{display:block;width:4rem;height:4rem;object-fit:contain;background:var(--color-ivory);border-radius:.2rem}
+.brand__logo{display:block;width:4rem;height:4rem;object-fit:contain}
 .brand--footer .brand__logo{width:3rem;height:3rem}
 @media(max-width:800px){.brand__logo{width:3.5rem;height:3.5rem}}
 @media(max-width:480px){.brand__logo{width:3.25rem;height:3.25rem}}
@@ -204,3 +204,7 @@ main,.footer{position:relative;z-index:1}.site-header{z-index:20}
 .contact__map iframe{display:block;width:100%;height:100%;border:0}
 @media(max-width:600px){.service-list__details{grid-template-columns:1fr;gap:.75rem}.service-list__details>a{justify-self:start}.contact__map{height:clamp(210px,60vw,260px)}}
 @media(prefers-reduced-motion:reduce){.service-list__hint>span{transition:none}.service-list__details{animation:none}}
+
+.review-card__author{display:inline-flex;align-self:flex-start;text-decoration:none;text-underline-offset:.2em}
+.review-card__author:hover{text-decoration:underline}
+@media(max-width:480px){body::before{width:min(46vw,24vh,13rem);max-height:24vh;background-position:center;background-size:contain;opacity:.045}}

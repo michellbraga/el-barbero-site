@@ -83,6 +83,34 @@
       </div>
     </section>
 
+    <section class="gallery-section" id="galeria" aria-labelledby="gallery-title">
+      <div class="gallery-section__heading section-pad"><div class="section-kicker"><span>03 / POR DENTRO</span><i></i><span>EL BARBERO</span></div><h2 id="gallery-title">Um lugar para estar à vontade.</h2><p>Veja os detalhes que fazem parte da experiência na El Barbero.</p></div>
+      <div class="photo-carousel" data-carousel="gallery" aria-roledescription="carrossel" aria-label="Fotografias da El Barbero Barbearia" tabindex="0">
+        <div class="photo-carousel__viewport"><div class="photo-carousel__track" data-track>
+          <button class="photo-slide" type="button" data-full="assets/imagens/fachada-el-barbero.png" aria-label="Ampliar fotografia da fachada da El Barbero"><img src="assets/imagens/otimizadas/fachada-el-barbero-800.webp" alt="Fachada da El Barbero Barbearia" width="800" height="1067" loading="lazy"><span>A casa por fora</span></button>
+          <button class="photo-slide" type="button" data-full="assets/imagens/atendimento-barbearia.png" aria-label="Ampliar fotografia do atendimento na barbearia"><img src="assets/imagens/otimizadas/atendimento-barbearia-800.webp" alt="Barbeiro atendendo cliente no interior da barbearia" width="800" height="800" loading="lazy"><span>O cuidado em cada gesto</span></button>
+
+          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes-barbearia.png" aria-label="Ampliar fotografia dos instrumentos de barbearia"><img src="assets/imagens/otimizadas/detalhes-barbearia-800.webp" alt="Máquinas e instrumentos de barbearia sobre bancada de madeira" width="800" height="535" loading="lazy"><span>Atenção aos detalhes</span></button>
+          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes-barbearia2.png" aria-label="Ampliar fotografia do espaço de convivência"><img src="assets/imagens/otimizadas/detalhes-barbearia2-800.webp" alt="Espaço de convivência com sofá e decoração da El Barbero" width="800" height="1067" loading="lazy"><span>Um espaço com personalidade</span></button>
+          <button class="photo-slide" type="button" data-full="assets/imagens/Detalhes1-elbarbero.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-1.jpg" srcset="assets/imagens/otimizadas/detalhe-1-480.jpg 480w, assets/imagens/otimizadas/detalhe-1.jpg 960w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Detalhe do ambiente da El Barbero" width="960" height="1280" loading="lazy" decoding="async"><span>O ambiente El Barbero</span></button>
+          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes2%20elbarbero.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-2.jpg" srcset="assets/imagens/otimizadas/detalhe-2-480.jpg 480w, assets/imagens/otimizadas/detalhe-2.jpg 960w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Detalhe do interior da barbearia" width="960" height="1280" loading="lazy" decoding="async"><span>Texturas da casa</span></button>
+          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes3%20elbarbero.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-3.jpg" srcset="assets/imagens/otimizadas/detalhe-3-480.jpg 480w, assets/imagens/otimizadas/detalhe-3.jpg 960w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Detalhe da decoração da El Barbero" width="960" height="1280" loading="lazy" decoding="async"><span>Um olhar de perto</span></button>
+          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes4%20elbarbero.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-4.jpg" srcset="assets/imagens/otimizadas/detalhe-4-480.jpg 360w, assets/imagens/otimizadas/detalhe-4.jpg 720w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Equipamentos e detalhes da barbearia" width="720" height="1280" loading="lazy" decoding="async"><span>Ferramentas do ofício</span></button>
+          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes5%20elbarbeiro.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-5.jpg" srcset="assets/imagens/otimizadas/detalhe-5-480.jpg 360w, assets/imagens/otimizadas/detalhe-5.jpg 720w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Detalhe do espaço da El Barbero" width="720" height="1280" loading="lazy" decoding="async"><span>O cuidado mora nos detalhes</span></button>
+        </div></div>
+        <div class="photo-carousel__controls"><button type="button" data-prev aria-label="Fotografia anterior">←</button><div class="photo-carousel__indicators" data-indicators aria-label="Selecionar fotografia"></div><span class="photo-carousel__count" data-position aria-live="polite">01 / 10</span><button type="button" data-next aria-label="Próxima fotografia">→</button></div>
+      </div>
+    </section>
+
+    <dialog class="lightbox" id="photo-lightbox" aria-label="Fotografia ampliada da El Barbero">
+      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Fechar fotografia">×</button>
+      <button class="lightbox__arrow lightbox__arrow--previous" type="button" data-lightbox-prev aria-label="Fotografia anterior">←</button>
+      <figure><img id="lightbox-image" alt=""><figcaption id="lightbox-caption"></figcaption></figure>
+      <button class="lightbox__arrow lightbox__arrow--next" type="button" data-lightbox-next aria-label="Próxima fotografia">→</button>
+    </dialog>
+
+
+
     <section class="service-section section-pad" id="servicos" aria-labelledby="services-title">
       <div class="section-kicker"><span>02 / CUIDADO</span><i></i><span>MENU DE SERVIÇOS</span></div>
       <h2 id="services-title">Conheça os nossos serviços</h2>
@@ -197,26 +225,27 @@
             <article class="review-card">
               <div class="review-card__top"><div class="review-card__stars" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></div><span class="google-source" aria-label="Avaliação do Google"><span aria-hidden="true">G</span></span></div>
               <blockquote>Serviço de excelência, profissionais extremamente educados e qualificados!! Nunca decepciona, nota 10!!</blockquote>
-              <p class="review-card__author">Marcus Guerra Junior</p><span class="review-card__source">Avaliação do Google</span>
+              <a class="review-card__author" href="https://www.google.com/maps/contrib/118094794279106927953/reviews?authuser=1&amp;hl=pt-BR" target="_blank" rel="noopener noreferrer">Marcus Guerra Junior</a><span class="review-card__source">Avaliação do Google</span>
             </article>
             <article class="review-card">
               <div class="review-card__top"><div class="review-card__stars" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></div><span class="google-source" aria-label="Avaliação do Google"><span aria-hidden="true">G</span></span></div>
               <blockquote>Sou cliente da Barbearia há 2 anos e sempre sou muito bem atendido pelo Nilton</blockquote>
-              <p class="review-card__author">Thiago Maia</p><span class="review-card__source">Avaliação do Google</span>
-            </article>
-            <article class="review-card">
-              <div class="review-card__top"><div class="review-card__stars" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></div><span class="google-source" aria-label="Avaliação do Google"><span aria-hidden="true">G</span></span></div>
-              <blockquote>Excepcional</blockquote>
-              <p class="review-card__author">Natalia Gouveia</p><span class="review-card__source">Avaliação do Google</span>
+              <a class="review-card__author" href="https://www.google.com/maps/contrib/103198619354545000397/reviews?authuser=1&amp;hl=pt-BR" target="_blank" rel="noopener noreferrer">Thiago Maia</a><span class="review-card__source">Avaliação do Google</span>
             </article>
             <article class="review-card">
               <div class="review-card__top"><div class="review-card__stars" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></div><span class="google-source" aria-label="Avaliação do Google"><span aria-hidden="true">G</span></span></div>
               <blockquote>Excelente barbearia super recomendo, excelente profissionais, sala de espera super aconchegante com sinuca, ambiente pra tomar uma cerveja enquanto aguardamos a nossa vez! Parabéns</blockquote>
-              <p class="review-card__author">Michel Braga</p><span class="review-card__source">Avaliação do Google</span>
+              <a class="review-card__author" href="https://www.google.com/maps/contrib/103781659370477544638/reviews?authuser=1&amp;hl=pt-BR" target="_blank" rel="noopener noreferrer">Michel Braga</a><span class="review-card__source">Avaliação do Google</span>
             </article>
-            <article class="review-card review-card--no-comment">
+            <article class="review-card">
               <div class="review-card__top"><div class="review-card__stars" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></div><span class="google-source" aria-label="Avaliação do Google"><span aria-hidden="true">G</span></span></div>
-              <p class="review-card__author">araujo Frota</p><span class="review-card__source">Avaliação do Google</span>
+              <blockquote>Ótimo atendimento. Barbeiro muito bom, cuidadoso e profissional. Anuente muito agradável.</blockquote>
+              <a class="review-card__author" href="https://www.google.com/maps/contrib/113441219346255448488/reviews?authuser=1&amp;hl=pt-BR" target="_blank" rel="noopener noreferrer">Edesel De Paschoal</a><span class="review-card__source">Avaliação do Google</span>
+            </article>
+            <article class="review-card">
+              <div class="review-card__top"><div class="review-card__stars" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></div><span class="google-source" aria-label="Avaliação do Google"><span aria-hidden="true">G</span></span></div>
+              <blockquote>Excelentes atendimento e serviço.</blockquote>
+              <a class="review-card__author" href="https://www.google.com/maps/contrib/106328412168535599429/reviews?authuser=1&amp;hl=pt-BR" target="_blank" rel="noopener noreferrer">Cicero Thiago</a><span class="review-card__source">Avaliação do Google</span>
             </article>
           </div>
         </div>
@@ -226,32 +255,6 @@
         </div>
       </div>
     </section>
-
-    <section class="gallery-section" id="galeria" aria-labelledby="gallery-title">
-      <div class="gallery-section__heading section-pad"><div class="section-kicker"><span>03 / POR DENTRO</span><i></i><span>EL BARBERO</span></div><h2 id="gallery-title">Um lugar para estar à vontade.</h2><p>Veja os detalhes que fazem parte da experiência na El Barbero.</p></div>
-      <div class="photo-carousel" data-carousel="gallery" aria-roledescription="carrossel" aria-label="Fotografias da El Barbero Barbearia" tabindex="0">
-        <div class="photo-carousel__viewport"><div class="photo-carousel__track" data-track>
-          <button class="photo-slide" type="button" data-full="assets/imagens/fachada-el-barbero.png" aria-label="Ampliar fotografia da fachada da El Barbero"><img src="assets/imagens/otimizadas/fachada-el-barbero-800.webp" alt="Fachada da El Barbero Barbearia" width="800" height="1067" loading="lazy"><span>A casa por fora</span></button>
-          <button class="photo-slide" type="button" data-full="assets/imagens/atendimento-barbearia.png" aria-label="Ampliar fotografia do atendimento na barbearia"><img src="assets/imagens/otimizadas/atendimento-barbearia-800.webp" alt="Barbeiro atendendo cliente no interior da barbearia" width="800" height="800" loading="lazy"><span>O cuidado em cada gesto</span></button>
-
-          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes-barbearia.png" aria-label="Ampliar fotografia dos instrumentos de barbearia"><img src="assets/imagens/otimizadas/detalhes-barbearia-800.webp" alt="Máquinas e instrumentos de barbearia sobre bancada de madeira" width="800" height="535" loading="lazy"><span>Atenção aos detalhes</span></button>
-          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes-barbearia2.png" aria-label="Ampliar fotografia do espaço de convivência"><img src="assets/imagens/otimizadas/detalhes-barbearia2-800.webp" alt="Espaço de convivência com sofá e decoração da El Barbero" width="800" height="1067" loading="lazy"><span>Um espaço com personalidade</span></button>
-          <button class="photo-slide" type="button" data-full="assets/imagens/Detalhes1-elbarbero.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-1.jpg" srcset="assets/imagens/otimizadas/detalhe-1-480.jpg 480w, assets/imagens/otimizadas/detalhe-1.jpg 960w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Detalhe do ambiente da El Barbero" width="960" height="1280" loading="lazy" decoding="async"><span>O ambiente El Barbero</span></button>
-          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes2%20elbarbero.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-2.jpg" srcset="assets/imagens/otimizadas/detalhe-2-480.jpg 480w, assets/imagens/otimizadas/detalhe-2.jpg 960w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Detalhe do interior da barbearia" width="960" height="1280" loading="lazy" decoding="async"><span>Texturas da casa</span></button>
-          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes3%20elbarbero.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-3.jpg" srcset="assets/imagens/otimizadas/detalhe-3-480.jpg 480w, assets/imagens/otimizadas/detalhe-3.jpg 960w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Detalhe da decoração da El Barbero" width="960" height="1280" loading="lazy" decoding="async"><span>Um olhar de perto</span></button>
-          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes4%20elbarbero.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-4.jpg" srcset="assets/imagens/otimizadas/detalhe-4-480.jpg 360w, assets/imagens/otimizadas/detalhe-4.jpg 720w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Equipamentos e detalhes da barbearia" width="720" height="1280" loading="lazy" decoding="async"><span>Ferramentas do ofício</span></button>
-          <button class="photo-slide" type="button" data-full="assets/imagens/detalhes5%20elbarbeiro.jpeg" aria-label="Ampliar fotografia de detalhe da barbearia"><img src="assets/imagens/otimizadas/detalhe-5.jpg" srcset="assets/imagens/otimizadas/detalhe-5-480.jpg 360w, assets/imagens/otimizadas/detalhe-5.jpg 720w" sizes="(max-width: 600px) 85vw, (max-width: 1000px) 48vw, 32vw" alt="Detalhe do espaço da El Barbero" width="720" height="1280" loading="lazy" decoding="async"><span>O cuidado mora nos detalhes</span></button>
-        </div></div>
-        <div class="photo-carousel__controls"><button type="button" data-prev aria-label="Fotografia anterior">←</button><div class="photo-carousel__indicators" data-indicators aria-label="Selecionar fotografia"></div><span class="photo-carousel__count" data-position aria-live="polite">01 / 10</span><button type="button" data-next aria-label="Próxima fotografia">→</button></div>
-      </div>
-    </section>
-
-    <dialog class="lightbox" id="photo-lightbox" aria-label="Fotografia ampliada da El Barbero">
-      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Fechar fotografia">×</button>
-      <button class="lightbox__arrow lightbox__arrow--previous" type="button" data-lightbox-prev aria-label="Fotografia anterior">←</button>
-      <figure><img id="lightbox-image" alt=""><figcaption id="lightbox-caption"></figcaption></figure>
-      <button class="lightbox__arrow lightbox__arrow--next" type="button" data-lightbox-next aria-label="Próxima fotografia">→</button>
-    </dialog>
 
     <section class="contact section-pad" id="contato" aria-labelledby="contact-title">
       <div class="contact__photo"><img src="assets/imagens/contato-barbearia.jpeg" alt="Parede com o letreiro da El Barbero, sofá de couro e mesa de centro" width="720" height="1280" loading="lazy" decoding="async"></div>
