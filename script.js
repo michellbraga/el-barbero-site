@@ -78,6 +78,8 @@
   document.querySelectorAll('[data-carousel]').forEach((carousel) => {
     const track = carousel.querySelector('[data-track]');
     const viewport = carousel.querySelector('.service-track-wrap, .photo-carousel__viewport, .review-carousel__viewport');
+    const isGallery = carousel.dataset.carousel === 'gallery';
+    const isReviews = carousel.dataset.carousel === 'reviews';
     const slides = Array.from(track.children);
     const loopSlides = isGallery ? slides.slice(0, 3).map((slide) => {
       const clone = slide.cloneNode(true);
@@ -93,8 +95,6 @@
     const next = carousel.querySelector('[data-next]');
     const position = carousel.querySelector('[data-position]');
     const indicators = carousel.querySelector('[data-indicators]');
-    const isGallery = carousel.dataset.carousel === 'gallery';
-    const isReviews = carousel.dataset.carousel === 'reviews';
     if (carousel.dataset.carousel === 'services') {
       carousel.classList.toggle('service-lane--short-1', slides.length === 1);
       carousel.classList.toggle('service-lane--short-2', slides.length === 2);
