@@ -79,6 +79,16 @@
     const track = carousel.querySelector('[data-track]');
     const viewport = carousel.querySelector('.service-track-wrap, .photo-carousel__viewport, .review-carousel__viewport');
     const slides = Array.from(track.children);
+    const loopSlides = isGallery ? slides.slice(0, 3).map((slide) => {
+      const clone = slide.cloneNode(true);
+      clone.dataset.clone = 'true';
+      clone.setAttribute('aria-hidden', 'true');
+      clone.tabIndex = -1;
+      clone.style.pointerEvents = 'none';
+      track.append(clone);
+      return clone;
+    }) : [];
+    const navigableSlides = [...slides, ...loopSlides];
     const previous = carousel.querySelector('[data-prev]');
     const next = carousel.querySelector('[data-next]');
     const position = carousel.querySelector('[data-position]');
@@ -120,10 +130,11 @@
     }
 
     function update() {
-      const first = slides[index];
+      const first = navigableSlides[index];
       const offset = first ? first.offsetLeft : 0;
       track.style.transform = `translate3d(-${offset}px, 0, 0)`;
-      if (position) position.textContent = `${String(index + 1).padStart(2, '0')} / ${String(maximum + 1).padStart(2, '0')}`;
+      const shownIndex = isGallery ? index % (maximum + 1) : index;
+      if (position) position.textContent = `${String(shownIndex + 1).padStart(2, '0')} / ${String(maximum + 1).padStart(2, '0')}`;
       if (previous) previous.disabled = maximum === 0;
       if (next) next.disabled = maximum === 0;
       if (indicators) Array.from(indicators.children).forEach((dot, dotIndex) => {
@@ -141,7 +152,21 @@
     function start() {
       pause();
       if (reducedMotionPreference.matches || !isInView || isInteracting || maximum === 0 || (isGallery && lightbox.open)) return;
-      rotationTimer = window.setInterval(() => goTo(index >= maximum ? 0 : index + 1), isGallery ? 6500 : 7800);
+      rotationTimer = window.setInterval(() => {
+        if (isGallery) {
+          if (index >= slides.length) {
+            track.style.transition = 'none';
+            index = 0;
+            update();
+            requestAnimationFrame(() => { track.style.transition = ''; });
+          } else {
+            index += 1;
+            update();
+          }
+          return;
+        }
+        goTo(index >= maximum ? 0 : index + 1);
+      }, isGallery ? 6500 : 7800);
     }
 
     function goTo(target, wasManual = false) {
@@ -204,7 +229,7 @@
 
   function showPhoto(index) {
     if (!photoCarousel || !lightbox) return;
-    const photos = Array.from(photoCarousel.querySelectorAll('.photo-slide'));
+    const photos = Array.from(photoCarousel.querySelectorAll('.photo-slide:not([data-clone])'));
     photoIndex = (index + photos.length) % photos.length;
     const photo = photos[photoIndex];
     const image = photo.querySelector('img');
@@ -218,7 +243,7 @@
     }
   }
 
-  photoCarousel?.querySelectorAll('.photo-slide').forEach((photo, index) => {
+  photoCarousel?.querySelectorAll('.photo-slide:not([data-clone])').forEach((photo, index) => {
     photo.addEventListener('click', () => showPhoto(index));
   });
   document.querySelector('[data-lightbox-close]')?.addEventListener('click', () => lightbox.close());
