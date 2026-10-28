@@ -58,6 +58,9 @@
     const detail = { event: link.dataset.track, origin: link.dataset.origin || 'unknown' };
     window.dispatchEvent(new CustomEvent('elbarbero:conversion', { detail }));
     if (Array.isArray(window.dataLayer)) window.dataLayer.push(detail);
+    if (detail.event === 'whatsapp_click' && typeof window.fbq === 'function') {
+      window.fbq('track', 'Contact');
+    }
   }));
 
   const reducedMotionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
