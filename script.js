@@ -54,14 +54,38 @@
     menuToggle.setAttribute('aria-label', 'Abrir menu');
   }));
 
-  document.querySelectorAll('[data-track]').forEach((link) => link.addEventListener('click', () => {
-    const detail = { event: link.dataset.track, origin: link.dataset.origin || 'unknown' };
-    window.dispatchEvent(new CustomEvent('elbarbero:conversion', { detail }));
-    if (Array.isArray(window.dataLayer)) window.dataLayer.push(detail);
-    if (detail.event === 'whatsapp_click' && typeof window.fbq === 'function') {
+  function isWhatsAppDestination(destination) {
+    if (!destination) return false;
+    let url;
+    try {
+      url = new URL(destination, window.location.href);
+    } catch {
+      return false;
+    }
+
+    if (url.protocol === 'whatsapp:') return true;
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
+
+    const hostname = url.hostname.toLowerCase().replace(/\.$/, '');
+    return hostname === 'wa.me' || hostname.endsWith('.wa.me') ||
+      hostname === 'whatsapp.com' || hostname.endsWith('.whatsapp.com');
+  }
+
+  document.addEventListener('click', (event) => {
+    const control = event.target.closest?.('a[href], area[href], button');
+    if (!control) return;
+
+    if (control.dataset.track) {
+      const detail = { event: control.dataset.track, origin: control.dataset.origin || 'unknown' };
+      window.dispatchEvent(new CustomEvent('elbarbero:conversion', { detail }));
+      if (Array.isArray(window.dataLayer)) window.dataLayer.push(detail);
+    }
+
+    const destination = control.getAttribute('href') || control.getAttribute('data-href') || control.getAttribute('formaction');
+    if (isWhatsAppDestination(destination) && typeof window.fbq === 'function') {
       window.fbq('track', 'Contact');
     }
-  }));
+  });
 
   const reducedMotionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   const carouselStates = [];
