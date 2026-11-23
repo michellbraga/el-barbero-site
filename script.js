@@ -12,6 +12,7 @@
   function closeIntro() {
     if (introClosed) return;
     introClosed = true;
+    try { sessionStorage.setItem("elbarbero_intro_seen", "1"); } catch {}
     window.clearTimeout(introTimer);
     intro.classList.add('is-leaving');
     document.body.classList.remove('intro-active');
@@ -21,7 +22,10 @@
     }, 400);
   }
 
-  if (reducedMotion) {
+  let introSeen = false;
+  try { introSeen = sessionStorage.getItem("elbarbero_intro_seen") === "1"; } catch {}
+  const saveData = Boolean(navigator.connection && navigator.connection.saveData);
+  if (reducedMotion || introSeen || saveData) {
     intro.remove();
   } else {
     document.body.classList.add('intro-active');
@@ -75,10 +79,9 @@
     const control = event.target.closest?.('a[href], area[href], button');
     if (!control) return;
 
-    if (control.dataset.track) {
+    if (control.dataset.track && control.dataset.track !== 'whatsapp_click') {
       const detail = { event: control.dataset.track, origin: control.dataset.origin || 'unknown' };
       window.dispatchEvent(new CustomEvent('elbarbero:conversion', { detail }));
-      if (Array.isArray(window.dataLayer)) window.dataLayer.push(detail);
     }
 
     const destination = control.getAttribute('href') || control.getAttribute('data-href') || control.getAttribute('formaction');

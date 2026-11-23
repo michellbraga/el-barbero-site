@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-# Add a Sitemap directive after the final public domain is configured.
+Sitemap: https://www.elb351.com/sitemap.xml

@@ -29,7 +29,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="description" content="Barbearia clássica no bairro Dom Pedro, em Manaus. Conheça a El Barbero e fale com a equipe para consultar horários.">
   <title>El Barbero Barbearia no Dom Pedro, Manaus | Agende seu horário</title>
-  <!-- TODO SEO: definir o domínio oficial e acrescentar a URL canônica e sitemap absolutos antes da publicação. -->
+  <link rel="canonical" href="https://www.elb351.com/"><meta name="geo.region" content="BR-AM"><meta name="geo.placename" content="Manaus"><meta property="og:url" content="https://www.elb351.com/"><meta property="og:image" content="https://www.elb351.com/assets/imagens/otimizadas/hero-barbearia-1200.webp"><meta property="og:image:alt" content="Interior da El Barbero Barbearia"><meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="El Barbero Barbearia — Dom Pedro">
@@ -37,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:description" content="Conheça a El Barbero no Dom Pedro e fale com a equipe para consultar horários.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" type="image/webp" href="assets/imagens/otimizadas/hero-barbearia-1200.webp" imagesrcset="assets/imagens/otimizadas/hero-barbearia-480.webp 480w, assets/imagens/otimizadas/hero-barbearia-800.webp 800w, assets/imagens/otimizadas/hero-barbearia-1200.webp 1200w, assets/imagens/otimizadas/hero-barbearia-1254.webp 1254w" imagesizes="(max-width: 480px) 100vw, (max-width: 800px) 90vw, (max-width: 1499px) 70vw, 65vw" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="preview.css">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -56,13 +56,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "hasMap":"https://www.google.com/maps/place/El+Barbero+Barbearia+-+Dom+Pedro/data=!4m2!3m1!1s0x0:0x9305bbea23789d79"
   }
   </script>
-</head>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qual é o horário?","acceptedAnswer":{"@type":"Answer","text":"O período informado é das 09h às 20h. Os dias da semana precisam ser confirmados."}},{"@type":"Question","name":"Como faço para agendar?","acceptedAnswer":{"@type":"Answer","text":"Inicie uma conversa pelo WhatsApp para consultar disponibilidade. O clique não confirma um horário."}},{"@type":"Question","name":"Onde fica a barbearia?","acceptedAnswer":{"@type":"Answer","text":"Av. Pedro Teixeira, 351 - Dom Pedro, Manaus - AM, 69040-550."}},{"@type":"Question","name":"Há corte infantil?","acceptedAnswer":{"@type":"Answer","text":"Há corte infantil para crianças de até 7 anos."}}]}</script></head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS829245"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div class="intro" id="intro" aria-label="Abertura da El Barbero" aria-live="polite">
-    <video class="intro__video" id="intro-video" autoplay muted playsinline preload="auto" aria-hidden="true">
+    <video class="intro__video" id="intro-video" autoplay muted playsinline preload="metadata" poster="assets/imagens/otimizadas/hero-barbearia-800.webp" aria-label="Vídeo de abertura da El Barbero Barbearia" aria-hidden="true">
       <source src="assets/videos/abertura-el-barbero.mp4" type="video/mp4">
     </video>
     <div class="intro__fallback" aria-hidden="true"><span class="intro__rule"></span><span class="intro__name">EL BARBERO</span><span class="intro__sub">BARBEARIA · DOM PEDRO</span></div>
@@ -78,7 +78,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#experiencia">A barbearia</a>
       <a href="#servicos">Serviços</a>
       <a href="#contato">Localização</a>
-      <a class="nav__cta" href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="booking_cta_click" data-origin="header">Agendar horário <span aria-hidden="true">↗</span></a>
+      <a class="nav__cta" href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="booking_cta_click" data-origin="header" data-conv="agendar">Agendar horário <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
@@ -91,7 +91,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1 id="hero-title">Barbearia clássica<br>no <em>Dom Pedro,</em><br>em Manaus.</h1>
         <p class="hero__copy">Um espaço de tradição, cuidado e personalidade. Conheça a El Barbero e converse com a equipe para planejar sua visita.</p>
         <div class="hero__actions">
-          <a class="button button--gold" href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="hero">Agendar pelo WhatsApp <span aria-hidden="true">↗</span></a>
+          <a class="button button--gold" href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="hero">Agendar pelo WhatsApp <span aria-hidden="true">↗</span></a>
           <a class="text-link" href="https://www.google.com/maps/place/El+Barbero+Barbearia+-+Dom+Pedro/data=!4m2!3m1!1s0x0:0x9305bbea23789d79" target="_blank" rel="noopener noreferrer" data-track="directions_click" data-origin="hero">Como chegar <span aria-hidden="true">↓</span></a>
         </div>
       </div>
@@ -139,37 +139,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="section-kicker"><span>02 / CUIDADO</span><i></i><span>MENU DE SERVIÇOS</span></div>
       <h2 id="services-title">Conheça os nossos serviços</h2>
       <p class="service-section__lead">Escolha o cuidado que combina com você e consulte a equipe pelo WhatsApp.</p>
-      <div class="service-groups">
+      <nav class="landing-links" aria-label="Páginas de serviços"><a href="/corte-masculino-dom-pedro-manaus/">Corte masculino</a> <a href="/barba-dom-pedro-manaus/">Barba</a> <a href="/corte-infantil-manaus/">Corte infantil</a> <a href="/combos-e-aniversariante-manaus/">Combos e aniversariante</a></nav><div class="service-groups">
         <section class="service-lane service-lane--list" aria-labelledby="cuts-title">
           <div class="service-lane__heading"><h3 id="cuts-title">Cortes de cabelo</h3></div>
           <div class="service-list">
             <details class="service-list__item">
               <summary><span class="service-list__name">Corte Low-Fade</span><strong class="service-list__price">R$ 75,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Corte detalhado com acabamento em degradê baixo, muito procurado por adolescentes.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Corte detalhado com acabamento em degradê baixo, muito procurado por adolescentes.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Corte Navalhado</span><strong class="service-list__price">R$ 75,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Corte realizado com máquina e navalha, proporcionando acabamento detalhado.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Corte realizado com máquina e navalha, proporcionando acabamento detalhado.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Corte Simples</span><strong class="service-list__price">R$ 50,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Corte realizado inteiramente com máquina, sem necessidade de trocar os pentes durante o serviço.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Corte realizado inteiramente com máquina, sem necessidade de trocar os pentes durante o serviço.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Corte Tesoura</span><strong class="service-list__price">R$ 75,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Corte de cabelo realizado utilizando apenas tesoura.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Corte de cabelo realizado utilizando apenas tesoura.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Corte</span><strong class="service-list__price">R$ 70,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Corte misto, utilizando tesoura e máquina para trabalhar o cabelo.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Corte misto, utilizando tesoura e máquina para trabalhar o cabelo.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Corte Aniversariante</span><strong class="service-list__price">R$ 60,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Serviço de corte de cabelo para aniversariantes. Consulte as condições para utilizar esse serviço.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Serviço de corte de cabelo para aniversariantes. Consulte as condições para utilizar esse serviço.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Corte Infantil</span><strong class="service-list__price">R$ 75,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Corte de cabelo realizado exclusivamente em crianças de até 7 anos.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Corte de cabelo realizado exclusivamente em crianças de até 7 anos.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
           </div>
         </section>
@@ -178,11 +178,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="service-list">
             <details class="service-list__item">
               <summary><span class="service-list__name">Hidratação</span><strong class="service-list__price">R$ 30,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Serviço de hidratação para cabelo ou barba.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Serviço de hidratação para cabelo ou barba.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Pezinho</span><strong class="service-list__price">R$ 25,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Serviço de acabamento do cabelo ou da barba, ideal para manter os contornos alinhados.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Serviço de acabamento do cabelo ou da barba, ideal para manter os contornos alinhados.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
           </div>
         </section>
@@ -191,15 +191,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="service-list">
             <details class="service-list__item">
               <summary><span class="service-list__name">Barba Completa</span><strong class="service-list__price">R$ 70,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Serviço completo de barba, com cuidado e acabamento para valorizar o visual.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Serviço completo de barba, com cuidado e acabamento para valorizar o visual.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Barba e Limpeza Esfoliante</span><strong class="service-list__price">R$ 130,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Serviço de barba com tratamento utilizando ozônio, conforme descrição do cadastro original.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Serviço de barba com tratamento utilizando ozônio, conforme descrição do cadastro original.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Barba Simples</span><strong class="service-list__price">R$ 50,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Serviço de barba realizado somente com máquina, sem utilização de navalha.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Serviço de barba realizado somente com máquina, sem utilização de navalha.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
           </div>
         </section>
@@ -208,15 +208,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="service-list">
             <details class="service-list__item">
               <summary><span class="service-list__name">Combo</span><strong class="service-list__price">R$ 125,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Combo de corte de cabelo e barba.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Combo de corte de cabelo e barba.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Combo Aniversariante</span><strong class="service-list__price">R$ 110,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Combo de corte de cabelo e barba, acompanhado de serviço de limpeza facial ou hidratação.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Combo de corte de cabelo e barba, acompanhado de serviço de limpeza facial ou hidratação.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
             <details class="service-list__item">
               <summary><span class="service-list__name">Combo Tesoura</span><strong class="service-list__price">R$ 135,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Corte de cabelo realizado inteiramente com tesoura, acompanhado de barba completa.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Corte de cabelo realizado inteiramente com tesoura, acompanhado de barba completa.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
           </div>
         </section>
@@ -225,7 +225,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="service-list">
             <details class="service-list__item">
               <summary><span class="service-list__name">Sobrancelha</span><strong class="service-list__price">R$ 20,00</strong><span class="service-list__hint">Ver descrição <span aria-hidden="true">+</span></span></summary>
-              <div class="service-list__details"><p>Serviço de design e acabamento das sobrancelhas realizado com navalha.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
+              <div class="service-list__details"><p>Serviço de design e acabamento das sobrancelhas realizado com navalha.</p><a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="services">Agendar <span aria-hidden="true">↗</span></a></div>
             </details>
           </div>
         </section>
@@ -246,16 +246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="review-carousel" data-carousel="reviews" tabindex="0" aria-label="Avaliações de clientes" aria-roledescription="carrossel">
         <div class="review-carousel__viewport">
           <div class="review-track" data-track>
-            <article class="review-card">
-              <div class="review-card__top"><div class="review-card__stars" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></div><span class="google-source" aria-label="Avaliação do Google"><span aria-hidden="true">G</span></span></div>
-              <blockquote>Serviço de excelência, profissionais extremamente educados e qualificados!! Nunca decepciona, nota 10!!</blockquote>
-              <a class="review-card__author" href="https://www.google.com/maps/contrib/118094794279106927953/reviews?authuser=1&amp;hl=pt-BR" target="_blank" rel="noopener noreferrer">Marcus Guerra Junior</a><span class="review-card__source">Avaliação do Google</span>
-            </article>
-            <article class="review-card">
-              <div class="review-card__top"><div class="review-card__stars" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></div><span class="google-source" aria-label="Avaliação do Google"><span aria-hidden="true">G</span></span></div>
-              <blockquote>Sou cliente da Barbearia há 2 anos e sempre sou muito bem atendido pelo Nilton</blockquote>
-              <a class="review-card__author" href="https://www.google.com/maps/contrib/103198619354545000397/reviews?authuser=1&amp;hl=pt-BR" target="_blank" rel="noopener noreferrer">Thiago Maia</a><span class="review-card__source">Avaliação do Google</span>
-            </article>
+
             <article class="review-card">
               <div class="review-card__top"><div class="review-card__stars" aria-label="5 de 5 estrelas"><span aria-hidden="true">★★★★★</span></div><span class="google-source" aria-label="Avaliação do Google"><span aria-hidden="true">G</span></span></div>
               <blockquote>Excelente barbearia super recomendo, excelente profissionais, sala de espera super aconchegante com sinuca, ambiente pra tomar uma cerveja enquanto aguardamos a nossa vez! Parabéns</blockquote>
@@ -280,15 +271,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <section class="contact section-pad" id="contato" aria-labelledby="contact-title">
+    <section class="preview-faq section-pad"><h2>Antes de vir</h2><details><summary>Qual é o horário?</summary><p>O período informado é das 09h às 20h. Os dias ainda precisam ser confirmados.</p></details><details><summary>Como agendar?</summary><p>Inicie uma conversa pelo WhatsApp para consultar horários.</p></details><details><summary>Onde fica?</summary><p>Av. Pedro Teixeira, 351 - Dom Pedro, Manaus - AM, 69040-550.</p></details><details><summary>Há corte infantil?</summary><p>Sim, para crianças de até 7 anos.</p></details></section><section class="contact section-pad" id="contato" aria-labelledby="contact-title">
       <div class="contact__photo"><img src="assets/imagens/contato-barbearia.jpeg" alt="Parede com o letreiro da El Barbero, sofá de couro e mesa de centro" width="720" height="1280" loading="lazy" decoding="async"></div>
       <div class="contact__content">
         <div class="section-kicker section-kicker--light"><span>02 / VISITE</span><i></i><span>DOM PEDRO · MANAUS</span></div>
         <h2 id="contact-title">Seu próximo<br><em>momento começa aqui.</em></h2>
         <address>Av. Pedro Teixeira, 351<br>Dom Pedro, Manaus - AM<br>69040-550</address>
         <div class="contact__links">
-          <a class="button button--gold" href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="contact">Consultar horários <span aria-hidden="true">↗</span></a>
-          <a class="contact__direct" href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="contact">Marcar horário pelo WhatsApp <span>↗</span></a>
+          <a class="button button--gold" href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="contact">Consultar horários <span aria-hidden="true">↗</span></a>
+          <a class="contact__direct" href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="contact">Marcar horário pelo WhatsApp <span>↗</span></a>
           <a class="contact__direct" href="https://www.google.com/maps/place/El+Barbero+Barbearia+-+Dom+Pedro/data=!4m2!3m1!1s0x0:0x9305bbea23789d79" target="_blank" rel="noopener noreferrer" data-track="directions_click" data-origin="contact">Abrir no Google Maps <span>COMO CHEGAR ↗</span></a>
         </div>
         <a class="contact__instagram" href="https://www.instagram.com/barbearia.elbarbero/" target="_blank" rel="noopener noreferrer" data-track="instagram_click" data-origin="contact">Instagram <span>@barbearia.elbarbero ↗</span></a>
@@ -301,10 +292,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="brand brand--footer" href="#topo" aria-label="El Barbero — voltar ao início"><img class="brand__logo" src="assets/imagens/logo%20el%20barbero.png" alt="El Barbero Barbearia" width="500" height="500" loading="lazy" decoding="async"></a>
     <p>Av. Pedro Teixeira, 351 · Dom Pedro · Manaus/AM</p>
     <a href="tel:+5592981943510" data-track="phone_click" data-origin="footer">Ligar: (92) 98194-3510</a>
-    <a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-origin="footer">Marcar horário pelo WhatsApp</a>
+    <a href="https://wa.me/5592981943510?text=Ola%2C%20vim%20pelo%20site%20do%20El%20Barbero%20e%20quero%20marcar%20um%20horario" target="_blank" rel="noopener noreferrer" data-conv="agendar" data-track="whatsapp_click" data-origin="footer">Marcar horário pelo WhatsApp</a>
     <a href="privacidade.html">Política de Privacidade</a>
     <span class="footer__copyright">© <span id="year">2026</span> EL BARBERO</span>
   </footer>
   <script src="script.js" defer></script>
-</body>
+<script src="assets/js/conversion-tracking.js" defer></script><script src="assets/js/animations.js" defer></script></body>
 </html>

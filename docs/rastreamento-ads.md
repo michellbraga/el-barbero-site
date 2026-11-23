@@ -1,0 +1,5 @@
+# Rastreamento Ads — preview
+
+Mantidos GTM-KS829245 e evento whatsapp_click conforme instruções do cliente. A implementação local filtra links wa.me/5592981943510 com data-conv="agendar", clique real (isTrusted), pelo menos 5 segundos após carregamento, sem intro ativa e com deduplicação de 30 minutos em sessionStorage e debounce de 1 segundo. O evento bruto whatsapp_click_bruto é observacional e não deve acionar Google Ads. Eventos secundários usam click_telefone, click_rota, click_instagram e click_avaliacoes.
+
+Conversão informada: AW-11215537835 / Vjk3CKyRiqUdEKun_UmP. Não foi possível acessar GTM/Ads ou Tag Assistant. Nenhum container publicado foi alterado. O cliente deve verificar que a tag existente tem apenas um gatilho de evento personalizado whatsapp_click, contagem “Uma” e consentimento respeitado. Não criar uma segunda conversão.
